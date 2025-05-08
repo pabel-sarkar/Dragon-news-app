@@ -5,6 +5,8 @@ import {
 
 
 import HomeLayout from "../Layout/HomeLayout";
+import Home from "../Pages/Home";
+import CategoryNews from "../Pages/CategoryNews";
 
 
 
@@ -17,10 +19,12 @@ import HomeLayout from "../Layout/HomeLayout";
         {   
             index:true,
             path:'/',
+            Component:Home,
            
         },
         {
-          path:'login',
+          path:'categoty/:id',
+          Component:CategoryNews,
          
         },
         {
