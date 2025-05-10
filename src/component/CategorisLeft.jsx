@@ -2,7 +2,7 @@ import React, { use } from "react";
 import { NavLink } from "react-router";
 
 const categorisPromis = fetch("/categories.json").then((res) => res.json());
-console.log(categorisPromis);
+// console.log(categorisPromis);
 const CategorisLeft = () => {
   const categoris = use(categorisPromis);
   return (

@@ -1,4 +1,5 @@
 import { FaRegBookmark, FaRegEye, FaShareAlt, FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({category }) => {
   const {
@@ -8,6 +9,7 @@ const NewsCard = ({category }) => {
     author,
     thumbnail_url,
     details,
+    id
   } = category;
 
   const formattedDate = new Date(author.published_date).toLocaleDateString();
@@ -48,12 +50,12 @@ const NewsCard = ({category }) => {
       </figure>
 
       <div className="px-4 text-sm text-gray-700 mt-2">
-        {details.length > 250 ? (
+        {details.length > 200 ? (
           <p>
             {details.slice(0, 250)}...{" "}
-            <span className="text-blue-600 font-semibold cursor-pointer">
+            <Link to={`/news-details/${id}`} className="text-blue-600 font-semibold cursor-pointer">
               Read More
-            </span>
+            </Link>
           </p>
         ) : (
           <p>{details}</p>
